@@ -449,14 +449,14 @@ let _n = 1;
 const uid = () => 'f' + Date.now().toString(36) + (_n++);
 const F = (type,name,cx,cy,w,d,rot=0,color) => ({id:uid(),type,name,cx,cy,w,d,rot,color:color||typeColor(type)});
 
-function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),F("wardrobe","衣柜",3030,300,800,600,0),F("wardrobe","衣柜",3030,2510,800,600,180),F("cabinet","机柜(弱电箱)",3830,300,600,600,0),F("cabinet","强电箱柜",4430,300,600,600,0),F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),F("washer","洗衣机",4430,2525,600,570,180),F("counter","橱柜台面",3200,3300,1880,600,0),F("stove","烟机灶具",3330,3300,750,450,0),F("counter","橱柜台面(L)",1960,4245,2490,600,270),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),F("island","吧台",4755,5535,810,1050,0),F("barstool","吧椅",5420,5470,420,420,0),F("tvstand","投影墙柜",4505,6980,1840,310,90),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),F("bookshelf","书房侧书柜",5010,6980,1840,300,270),F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),F("cabinet","地台柜",5010,8550,1300,300,270),F("cabinet","地台柜",7895,8550,1300,330,90),F("beanbag","坐垫(圆)",6950,8580,730,730,0),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
+function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),Object.assign(F("wardrobe","衣柜",3030,300,800,600,0),{"h": 2400}),Object.assign(F("wardrobe","衣柜",3030,2510,800,600,180),{"h": 2400}),Object.assign(F("cabinet","机柜(弱电箱)",3830,300,600,600,0),{"h": 2400}),Object.assign(F("cabinet","强电箱柜",4430,300,600,600,0),{"h": 2400}),Object.assign(F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("washer","洗衣机",4430,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("counter","橱柜台面",3200,3300,1880,600,0),{"h": 850}),F("stove","烟机灶具",3330,3300,750,450,0),Object.assign(F("counter","橱柜台面(L)",1960,4245,2490,600,270),{"h": 850}),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),Object.assign(F("island","吧台",4755,5535,810,1050,0),{"h": 900}),F("barstool","吧椅",5420,5470,420,420,0),Object.assign(F("tvstand","投影墙柜",4505,6980,1840,310,90),{"h": 450}),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),Object.assign(F("bookshelf","书房侧书柜",5010,6980,1840,300,270),{"h": 2400}),Object.assign(F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),{"h": 1900}),Object.assign(F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),{"h": 900}),Object.assign(F("cabinet","水吧上柜(估)",7860,4805,1790,350,90),{"h": 900, "z": 1500}),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),Object.assign(F("cabinet","地台柜",5010,8550,1300,300,270),{"h": 2250}),Object.assign(F("cabinet","地台柜",7895,8550,1300,330,90),{"h": 2250}),F("beanbag","坐垫(圆)",6950,8580,730,730,0),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
 
 function defaultState(){
   const rooms = {}; ROOMS.forEach(r => rooms[r.id] = {name:r.name, mat:r.mat});
   return {furniture:defaultFurniture(), rooms, demolished:[], measures:[]};
 }
 
-const STORE = 'huxing-design-home-dwg-v3-platform';
+const STORE = 'huxing-design-home-dwg-v4-heights';
 function load(){
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.furniture)) return fixState(s); } catch(e) {}
   return null;
@@ -1508,7 +1508,7 @@ function init(){
     const f = getF(fdrag.id), g = groundAt(e.clientX, e.clientY); if (!f || !g) return;
     fdrag.moved = true; cv.style.cursor = 'grabbing';
     [f.cx, f.cy] = snapMove(f, g.x - fdrag.ox, g.y - fdrag.oy);
-    furnG.children.find(o => o.userData.fid === f.id)?.position.set(wx(f.cx), floorY(f.cx, f.cy), wz(f.cy));   // 拖动中只挪模型，松手再整体同步
+    furnG.children.find(o => o.userData.fid === f.id)?.position.set(wx(f.cx), floorY(f.cx, f.cy) + (f.z||0)/1000, wz(f.cy));   // 拖动中只挪模型，松手再整体同步
   });
   const endF = e => {
     if (!fdrag || e.pointerId !== fdrag.pid) return;
@@ -2176,7 +2176,8 @@ function buildFurniture(f){
     }
     default: g.add(box(w, .8, d, c));
   }
-  g.position.set(wx(f.cx), floorY(f.cx, f.cy), wz(f.cy));
+  if (f.h){ const bb = new THREE.Box3().setFromObject(g), hh = bb.max.y - bb.min.y; if (hh > 0) g.scale.y = (f.h/1000)/hh; }
+  g.position.set(wx(f.cx), floorY(f.cx, f.cy) + (f.z||0)/1000, wz(f.cy));
   g.rotation.y = -f.rot * Math.PI/180;       // 平面顺时针旋转 → 绕 Y 轴负向
   g.userData.fid = f.id;
   return g;
