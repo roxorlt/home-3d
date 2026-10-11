@@ -449,14 +449,14 @@ let _n = 1;
 const uid = () => 'f' + Date.now().toString(36) + (_n++);
 const F = (type,name,cx,cy,w,d,rot=0,color) => ({id:uid(),type,name,cx,cy,w,d,rot,color:color||typeColor(type)});
 
-function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),Object.assign(F("wardrobe","衣柜",3030,300,800,600,0),{"h": 2400}),Object.assign(F("wardrobe","衣柜",3030,2510,800,600,180),{"h": 2400}),Object.assign(F("cabinet","机柜(弱电箱)",3830,300,600,600,0),{"h": 2400}),Object.assign(F("cabinet","强电箱柜",4430,300,600,600,0),{"h": 2400}),Object.assign(F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("washer","洗衣机",4430,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("counter","橱柜台面",3200,3300,1880,600,0),{"h": 850}),F("stove","烟机灶具",3330,3300,750,450,0),Object.assign(F("counter","橱柜台面(L)",1960,4245,2490,600,270),{"h": 850}),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),Object.assign(F("island","吧台",4755,5535,810,1050,0),{"h": 900}),F("barstool","吧椅",5420,5470,420,420,0),Object.assign(F("tvstand","投影墙柜",4505,6980,1840,310,90),{"h": 450}),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),Object.assign(F("bookshelf","书房侧书柜",5010,6980,1840,300,270),{"h": 2400}),Object.assign(F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),{"h": 1900}),Object.assign(F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),{"h": 900}),Object.assign(F("cabinet","水吧上柜(估)",7860,4805,1790,350,90),{"h": 900, "z": 1500}),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),Object.assign(F("cabinet","地台柜",5010,8550,1300,300,270),{"h": 2250}),Object.assign(F("cabinet","地台柜",7895,8550,1300,330,90),{"h": 2250}),F("beanbag","坐垫(圆)",6950,8580,730,730,0),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
+function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),Object.assign(F("wardrobe","衣柜",3030,300,800,600,0),{"h": 2400}),Object.assign(F("wardrobe","衣柜",3030,2510,800,600,180),{"h": 2400}),Object.assign(F("cabinet","机柜(弱电箱)",3830,300,600,570,0),{"h": 800}),Object.assign(F("cabinet","强电箱柜",4430,300,600,570,0),{"h": 800}),Object.assign(F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("washer","洗衣机",4430,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("counter","橱柜台面",3200,3300,1880,600,0),{"h": 850}),Object.assign(F("cabinet","厨房吊柜(切菜区上)",2570,3175,580,350,0),{"h": 850, "z": 1550}),Object.assign(F("cabinet","厨房吊柜(820段上)",3970,3175,340,350,0),{"h": 850, "z": 1550}),F("stove","烟机灶具",3330,3300,750,450,0),Object.assign(F("counter","橱柜台面(L)",1960,4245,2490,600,270),{"h": 850}),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),Object.assign(F("island","吧台",4755,5535,810,1050,0),{"h": 900}),F("barstool","吧椅",5420,5470,420,420,0),Object.assign(F("tvstand","投影墙柜",4505,6980,1840,310,90),{"h": 800}),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),Object.assign(F("bookshelf","书房侧书柜",5010,6980,1840,300,270),{"h": 800}),Object.assign(F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),{"h": 1900}),Object.assign(F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),{"h": 900}),Object.assign(F("cabinet","水吧上柜(估)",7860,4805,1790,350,90),{"h": 900, "z": 1500}),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),Object.assign(F("cabinet","地台柜",5010,8550,1300,300,270),{"h": 2250}),Object.assign(F("cabinet","地台柜",7895,8550,1300,330,90),{"h": 2250}),F("beanbag","坐垫(圆)",6950,8580,730,730,0),Object.assign(F("cabinet","壁龛高柜(470x210,X)",6425,1395,470,210,0),{"h": 2100}),Object.assign(F("cabinet","卫生间吊柜(马桶/台盆上,X)",7090,2948,1800,165,180),{"h": 700, "z": 1600}),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
 
 function defaultState(){
   const rooms = {}; ROOMS.forEach(r => rooms[r.id] = {name:r.name, mat:r.mat});
   return {furniture:defaultFurniture(), rooms, demolished:[], measures:[]};
 }
 
-const STORE = 'huxing-design-home-dwg-v4-heights';
+const STORE = 'huxing-design-home-dwg-v5-cabinets';
 function load(){
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.furniture)) return fixState(s); } catch(e) {}
   return null;
@@ -1458,7 +1458,7 @@ function init(){
   host.appendChild(labelRenderer.domElement);
 
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(FOV, SW()/SH(), .05, 300);
+  camera = new THREE.PerspectiveCamera(FOV, SW()/SH(), .02, 300);
   orbit = new OrbitControls(camera, renderer.domElement);
   orbit.enableDamping = true; orbit.maxPolarAngle = Math.PI*.495; orbit.minDistance = 1.5; orbit.maxDistance = 45;
   walkCtl = new PointerLockControls(camera, document.body);
@@ -2380,7 +2380,7 @@ async function enter(){
   stage.classList.remove('animating');
 }
 async function exit(){
-  if (opt.mode === 'walk'){ walkCtl.unlock(); stopTouchWalk(); $('#hint3d').textContent = HINT_ORBIT; $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
+  if (opt.mode === 'walk'){ walkCtl.unlock(); stopTouchWalk(); camera.fov = FOV; camera.updateProjectionMatrix(); $('#hint3d').textContent = HINT_ORBIT; $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
     const dir = new THREE.Vector3(); camera.getWorldDirection(dir); orbit.target.copy(camera.position).addScaledVector(dir, 3).setY(0); opt.mode = 'orbit'; syncModeBtns(); }
   fly = null; orbit.enabled = false; showLabels(false); stage.classList.add('animating');
   const A = curPose(), B = planPose();
@@ -2452,8 +2452,9 @@ function syncHint3d(){ $('#hint3d').textContent = opt.mode === 'orbit' ? HINT_OR
 let touchWalk = false;
 const joy = {x:0, y:0, id:null}, eul = new THREE.Euler(0, 0, 0, 'YXZ');
 function lookBy(dx, dy){
-  eul.setFromQuaternion(camera.quaternion);
-  eul.y += dx * .005; eul.x = THREE.MathUtils.clamp(eul.x + dy * .005, -1.35, 1.35);
+  eul.setFromQuaternion(camera.quaternion, 'YXZ'); eul.order = 'YXZ'; eul.z = 0;
+  const k = camera.fov*Math.PI/180 / SH();   // 拖过整屏高 ≈ 转过一个视场角
+  eul.y += dx * k; eul.x = THREE.MathUtils.clamp(eul.x + dy * k, -PITCH, PITCH);
   camera.quaternion.setFromEuler(eul);
 }
 function startTouchWalk(){
@@ -2478,18 +2479,24 @@ function bindJoystick(){
   const end = e => { if (e.pointerId !== joy.id) return; joy.id = null; joy.x = joy.y = 0; knob.style.transform = ''; };
   el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
 }
+let lens = 'eye'; const PITCH = .55;
+const walkFov = () => lens === 'wide' ? (camera.aspect >= 1 ? 75 : 85) : (camera.aspect >= 1 ? 60 : 65);
+function setLens(l){ lens = l; if (opt.mode === 'walk'){ camera.fov = walkFov(); camera.updateProjectionMatrix(); } }
+const eyeY = p => 1.6 + floorY(p.x*1000 + OX, p.z*1000 + OY);
 function setMode(m){
-  if (anim) return;
+  if (anim){ setTimeout(() => setMode(m), 120); return; }
   opt.mode = m; syncModeBtns();
   if (m === 'walk'){
     window.select(null);
     if (opt.cut < H){ opt.cut = H; syncCutBtns(); sync(); }
     orbit.enabled = false; fly = null;
-    camera.position.set(wx(5415), 1.6, wz(-900)); camera.lookAt(wx(5415), 1.5, wz(3000));   // 入户门外
+    camera.position.set(wx(5415), 1.6, wz(-900)); camera.lookAt(wx(5415), 1.5, wz(3000));
+    camera.position.y = eyeY(camera.position); { const e = new THREE.Euler().setFromQuaternion(camera.quaternion, 'YXZ'); e.x = 0; e.z = 0; camera.quaternion.setFromEuler(e); }
+    camera.fov = walkFov(); camera.updateProjectionMatrix(); walkCtl.minPolarAngle = Math.PI/2 - PITCH; walkCtl.maxPolarAngle = Math.PI/2 + PITCH; walkCtl.pointerSpeed = .6;   // 入户门外
     $('#walkOverlay').style.display = 'flex';
     syncHint3d();
   } else {
-    walkCtl.unlock(); stopTouchWalk(); orbit.enabled = true;
+    walkCtl.unlock(); stopTouchWalk(); orbit.enabled = true; camera.fov = FOV; camera.updateProjectionMatrix();
     $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
     syncHint3d();
     orbit.target.set(0, 0, 0); flyTo(isoWhole());
@@ -2520,6 +2527,7 @@ function stepWalk(dt){
   const p = camera.position;
   if (!blocked(p.x + mv.x, p.z)) p.x += mv.x;
   if (!blocked(p.x, p.z + mv.z)) p.z += mv.z;
+  p.y += (eyeY(p) - p.y) * Math.min(1, dt*8);   // 上地台时平滑抬高150
 }
 addEventListener('keydown', e => {
   if (!active || e.target.matches('input,select,textarea')) return;
@@ -2581,7 +2589,7 @@ function shot(){ const a = document.createElement('a'); a.download = tr('户型�
 
 function relang(){ syncWalkTexts(); if (inited) buildLabels(); }
 
-window.View3D = {enter, exit, relang, sync:() => sync(), shot, groundAt, flyToRoom:id => active && !anim && flyToRoom(id), walking:() => active && opt.mode === 'walk'};
+window.View3D = {rig:() => ({camera, orbit, renderer, mode:opt.mode, busy:!!(anim||fly)}), setLens, lens:() => lens, setMode:m => setMode(m), flyToRoomNow:id => { if (active){ fly = null; flyToRoom(id); } }, enter, exit, relang, sync:() => sync(), shot, groundAt, flyToRoom:id => active && !anim && flyToRoom(id), walking:() => active && opt.mode === 'walk'};
 </script>
 <style id="protoCss">
 :root{--p-bg:rgba(255,255,255,.86);--p-ink:#2b2824;--p-mute:#8a8074;--p-acc:#b5653a;--p-sh:0 8px 30px rgba(40,30,20,.12)}
@@ -2620,11 +2628,22 @@ body.night-ui .rlabel{background:rgba(30,34,46,.8)!important;color:#eef0f5!impor
   #pCard{left:12px;right:70px;bottom:84px;min-width:0}
   #pHelp{top:auto;bottom:140px;right:12px}
 }
+aside.right section:has(.kbd){display:none!important}
+#pChat{position:fixed;left:24px;top:76px;z-index:36;width:300px;background:var(--p-bg);backdrop-filter:blur(14px);border-radius:16px;box-shadow:var(--p-sh);padding:10px 12px;font:13px/1.6 -apple-system,'PingFang SC','Noto Sans CJK SC',sans-serif;color:var(--p-ink)}
+#pChat .log{max-height:150px;overflow:auto;margin-bottom:6px}#pChat .me{color:var(--p-acc)}#pChat .ai{color:var(--p-mute)}
+#pChat form{display:flex;gap:6px}#pChat input{flex:1;border:1px solid rgba(0,0,0,.1);border-radius:10px;padding:7px 10px;font:inherit;background:transparent;color:inherit}
+#pChat button{border:none;border-radius:10px;background:var(--p-acc);color:#fff;padding:0 12px;cursor:pointer}
+#pChat .chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}#pChat .chips span{background:rgba(181,101,58,.1);color:var(--p-acc);border-radius:999px;padding:1px 8px;cursor:pointer;font-size:12px}
+body:not(.mode-layout) #pChat{display:none}
+body.mode-layout aside.lib{top:270px}
+#pLens{display:none}body.walking #pLens{display:inline-block}
+@media (max-width:700px){#pChat{left:12px;right:12px;width:auto;top:62px}body.mode-layout aside.lib{top:auto!important}}
 </style>
 <div id="pBrand">我的家 · 3D</div>
 <div id="pTop"><button data-m="view" class="on">看房</button><button data-m="layout">布置</button><button data-m="cost">算账</button></div>
 <div id="pTools"><button id="pNight" title="日/夜">☾</button><button id="pQ" title="快捷键">?</button></div>
-<div id="pViews"><button class="pBtn on" data-v="iso">鸟瞰</button><button class="pBtn" data-v="top">俯视</button><button class="pBtn" data-v="walk">漫游</button></div>
+<div id="pViews"><button class="pBtn on" data-v="iso">鸟瞰</button><button class="pBtn" data-v="top">俯视</button><button class="pBtn" data-v="walk">漫游</button><button class="pBtn" id="pLens">人眼</button></div>
+<div id="pChat"><div class="chips"><span>把沙发挪到东边</span><span>把书柜加高到2000</span><span>卧室改名为主卧</span></div><div class="log" id="pLog"><div class="ai">AI（演示，命令写死）：说说想怎么改？</div></div><form id="pForm"><input id="pIn" placeholder="例：把沙发挪到东边"><button>发送</button></form></div>
 <div id="pMini"><svg id="pMiniSvg"></svg></div>
 <div id="pCard"><button class="x">×</button><div id="pCardBody"></div></div>
 <div id="pHelp"><b>快捷键</b><br><kbd>拖动</kbd>旋转视角 · <kbd>滚轮</kbd>缩放<br><kbd>右键</kbd>平移 · <kbd>点房间</kbd>看信息<br><kbd>W A S D</kbd>漫游移动 · <kbd>E</kbd>开关门<br><kbd>R</kbd>旋转选中家具 · <kbd>Del</kbd>删除<br><kbd>Ctrl Z</kbd>撤销<br>手机：单指旋转、双指缩放</div>
@@ -2670,6 +2689,68 @@ document.querySelectorAll('#pViews button').forEach(b => b.onclick = () => {
 $q('#pNight').onclick = () => { $q('#toggles3d [data-t="night"]').click(); const n = document.body.classList.toggle('night-ui'); $q('#pNight').textContent = n ? '☀' : '☾'; };
 $q('#pQ').onclick = () => { const h = $q('#pHelp'); h.style.display = h.style.display === 'block' ? 'none' : 'block'; };
 setMode('view');
+// ---- walk lens toggle + joystick hygiene ----
+const syncWalk = () => { const w = window.View3D?.rig?.().mode === 'walk'; document.body.classList.toggle('walking', !!w); if (!w){ const j = $q('#joy'), x = $q('#walkExit'); if (j) j.style.display = 'none'; if (x) x.style.display = 'none'; } };
+setInterval(syncWalk, 400);
+$q('#pLens').onclick = () => { const l = window.View3D.lens() === 'eye' ? 'wide' : 'eye'; window.View3D.setLens(l); $q('#pLens').textContent = l === 'eye' ? '人眼' : '广角'; };
+// ---- minimap fly (works even if an animation is running) ----
+svg.querySelectorAll('.r').forEach(p => p.onclick = () => { const id = p.dataset.id; if (window.View3D.rig().mode === 'walk') window.View3D.setMode('orbit'); setTimeout(() => window.View3D.flyToRoomNow(id), 60); showCard(id); });
+// ---- map-style touch gestures in 看房/算账: 1 finger pan, 2 finger twist rotate + pinch zoom, 2 finger vertical drag = tilt ----
+const T = new Map(); let g0 = null, dirty = false;
+const cv = () => window.View3D?.rig?.().renderer.domElement;
+const gestureOn = e => e.pointerType === 'touch' && e.target === cv() && !document.body.classList.contains('mode-layout') && window.View3D.rig().mode === 'orbit';
+function gstate(){ const [a, b] = [...T.values()]; if (!b) return {n:1, x:a.x, y:a.y};
+  return {n:2, x:(a.x+b.x)/2, y:(a.y+b.y)/2, d:Math.hypot(b.x-a.x, b.y-a.y), ang:Math.atan2(b.y-a.y, b.x-a.x)}; }
+function apply(prev, cur){
+  const {camera, orbit} = window.View3D.rig(), V = window.THREE_V || camera.position.constructor;
+  const off = camera.position.clone().sub(orbit.target), dist = off.length();
+  if (cur.n !== prev.n) return;
+  const k = dist * 2 * Math.tan(camera.fov*Math.PI/360) / innerHeight;
+  if (cur.n === 1 || cur.n === 2){         // pan by (mid)point movement on the ground plane (2 fingers: only when not tilting)
+    const dx = cur.x - prev.x, dy = cur.y - prev.y;
+    const tilt = cur.n === 2 && Math.abs(dy) > 2*Math.abs(dx) && Math.abs(cur.d - prev.d) < Math.abs(dy)*.5 && Math.abs(cur.ang - prev.ang) < .02;
+    if (tilt){ // polar angle change
+      const r = off.length(), pol = Math.acos(off.y / r), az = Math.atan2(off.x, off.z);
+      const np = Math.min(Math.PI*.495, Math.max(.05, pol - dy*.006));
+      off.set(r*Math.sin(np)*Math.sin(az), r*Math.cos(np), r*Math.sin(np)*Math.cos(az));
+    } else if (cur.n === 1) {
+      const fw = new V(off.x, 0, off.z).normalize().negate(), rt = new V(-fw.z, 0, fw.x);
+      const mv = rt.multiplyScalar(-dx*k).add(fw.multiplyScalar(dy*k));
+      orbit.target.add(mv); camera.position.add(mv);
+    }
+    if (cur.n === 2 && !tilt){
+      const da = cur.ang - prev.ang, c = Math.cos(-da), s = Math.sin(-da);   // twist → azimuth
+      const x = off.x*c - off.z*s, z = off.x*s + off.z*c; off.x = x; off.z = z;
+      const sc = prev.d / cur.d; off.multiplyScalar(Math.min(1.2, Math.max(.83, sc)));   // pinch → dolly
+      const L = off.length(); if (L < orbit.minDistance) off.setLength(orbit.minDistance); if (L > orbit.maxDistance) off.setLength(orbit.maxDistance);
+    }
+    if (cur.n === 2 || tilt) camera.position.copy(orbit.target).add(off);
+    camera.lookAt(orbit.target);
+  }
+}
+addEventListener('pointerdown', e => { if (!gestureOn(e)) return; T.set(e.pointerId, {x:e.clientX, y:e.clientY}); g0 = gstate(); window.View3D.rig().orbit.enableDamping = false; if (T.size > 1) e.stopPropagation(); }, true);
+addEventListener('pointermove', e => { if (!T.has(e.pointerId)) return; e.stopPropagation(); e.preventDefault();
+  T.set(e.pointerId, {x:e.clientX, y:e.clientY}); dirty = true; }, true);
+(function tick(){ if (dirty && g0 && T.size){ const g = gstate(); apply(g0, g); g0 = g; } dirty = false; requestAnimationFrame(tick); })();
+const up = e => { if (!T.has(e.pointerId)) return; T.delete(e.pointerId); g0 = T.size ? gstate() : null; if (!T.size) window.View3D.rig().orbit.enableDamping = true; };
+addEventListener('pointerup', up, true); addEventListener('pointercancel', up, true);
+// ---- mock chat: hard-coded commands → JSON patch → apply via the app's undoable mutate() ----
+const log = (cls, t) => { const d = document.createElement('div'); d.className = cls; d.textContent = t; $q('#pLog').append(d); $q('#pLog').scrollTop = 1e6; };
+function run(q){
+  log('me', '我：' + q);
+  let patch = null, msg = '';
+  if (/沙发/.test(q) && /东/.test(q)){ const f = state.furniture.find(f => f.type === 'sofa'); patch = {op:'move_furniture', id:f.id, dx:500, dy:0}; msg = '沙发向东（图上右侧，按指北针）移动 500 mm，未碰墙。'; }
+  else if (/书柜/.test(q) && /(\d{3,4})/.test(q)){ const h = +q.match(/(\d{3,4})/)[1]; const f = state.furniture.find(f => f.type === 'bookshelf'); patch = {op:'set_height', id:f.id, h}; msg = `书柜高度改为 ${h} mm（原 ${f.h||'默认'}）。`; }
+  else if (/卧室/.test(q) && /改名为(.+)/.test(q)){ const n = q.match(/改名为(.+)/)[1].trim(); patch = {op:'rename_room', id:'bed', name:n}; msg = `卧室已改名为「${n}」。`; }
+  else { log('ai', 'AI：这句在演示里还没写死。真实版本会先问清楚，比如“哪件沙发？往东挪多少？”'); return; }
+  log('ai', 'AI → ' + JSON.stringify(patch));
+  mutate(() => { if (patch.op === 'move_furniture'){ const f = state.furniture.find(f => f.id === patch.id); f.cx += patch.dx; f.cy += patch.dy; }
+    else if (patch.op === 'set_height') state.furniture.find(f => f.id === patch.id).h = patch.h;
+    else if (patch.op === 'rename_room') state.rooms[patch.id].name = patch.name; });
+  window.View3D.sync(); log('ai', 'AI：' + msg + ' 可按 Ctrl+Z 撤销。');
+}
+$q('#pForm').onsubmit = e => { e.preventDefault(); const v = $q('#pIn').value.trim(); if (v){ run(v); $q('#pIn').value = ''; } };
+$q('#pChat .chips').onclick = e => { if (e.target.tagName === 'SPAN') run(e.target.textContent); };
 // start in 3D
 (function go(){ if (window.View3D && typeof setView === 'function') setView('3d'); else setTimeout(go, 150); })();
 })();

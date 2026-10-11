@@ -449,14 +449,14 @@ let _n = 1;
 const uid = () => 'f' + Date.now().toString(36) + (_n++);
 const F = (type,name,cx,cy,w,d,rot=0,color) => ({id:uid(),type,name,cx,cy,w,d,rot,color:color||typeColor(type)});
 
-function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),Object.assign(F("wardrobe","衣柜",3030,300,800,600,0),{"h": 2400}),Object.assign(F("wardrobe","衣柜",3030,2510,800,600,180),{"h": 2400}),Object.assign(F("cabinet","机柜(弱电箱)",3830,300,600,600,0),{"h": 2400}),Object.assign(F("cabinet","强电箱柜",4430,300,600,600,0),{"h": 2400}),Object.assign(F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("washer","洗衣机",4430,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("counter","橱柜台面",3200,3300,1880,600,0),{"h": 850}),F("stove","烟机灶具",3330,3300,750,450,0),Object.assign(F("counter","橱柜台面(L)",1960,4245,2490,600,270),{"h": 850}),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),Object.assign(F("island","吧台",4755,5535,810,1050,0),{"h": 900}),F("barstool","吧椅",5420,5470,420,420,0),Object.assign(F("tvstand","投影墙柜",4505,6980,1840,310,90),{"h": 450}),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),Object.assign(F("bookshelf","书房侧书柜",5010,6980,1840,300,270),{"h": 2400}),Object.assign(F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),{"h": 1900}),Object.assign(F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),{"h": 900}),Object.assign(F("cabinet","水吧上柜(估)",7860,4805,1790,350,90),{"h": 900, "z": 1500}),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),Object.assign(F("cabinet","地台柜",5010,8550,1300,300,270),{"h": 2250}),Object.assign(F("cabinet","地台柜",7895,8550,1300,330,90),{"h": 2250}),F("beanbag","坐垫(圆)",6950,8580,730,730,0),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
+function defaultFurniture(){ return [F("bed","双人床 1800",970,1150,1800,2000,0),F("nightstand","床头柜",2130,230,500,400,0),Object.assign(F("wardrobe","衣柜",3030,300,800,600,0),{"h": 2400}),Object.assign(F("wardrobe","衣柜",3030,2510,800,600,180),{"h": 2400}),Object.assign(F("cabinet","机柜(弱电箱)",3830,300,600,570,0),{"h": 800}),Object.assign(F("cabinet","强电箱柜",4430,300,600,570,0),{"h": 800}),Object.assign(F("dryer","烘衣机(钢架地台抬高550)",3830,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("washer","洗衣机",4430,2525,600,570,180),{"h": 850, "z": 550}),Object.assign(F("counter","橱柜台面",3200,3300,1880,600,0),{"h": 850}),Object.assign(F("cabinet","厨房吊柜(切菜区上)",2570,3175,580,350,0),{"h": 850, "z": 1550}),Object.assign(F("cabinet","厨房吊柜(820段上)",3970,3175,340,350,0),{"h": 850, "z": 1550}),F("stove","烟机灶具",3330,3300,750,450,0),Object.assign(F("counter","橱柜台面(L)",1960,4245,2490,600,270),{"h": 850}),F("ksink","水槽(左接四合一)",1960,4240,800,450,270),F("waterheater","燃气热水器",1885,4950,450,300,270),Object.assign(F("island","吧台",4755,5535,810,1050,0),{"h": 900}),F("barstool","吧椅",5420,5470,420,420,0),Object.assign(F("tvstand","投影墙柜",4505,6980,1840,310,90),{"h": 800}),F("tv","投影幕 100寸",4610,7170,2214,40,90),F("sofa","三人沙发",2140,7190,2380,880,270),F("sidetable","边几",2040,8750,580,580,0),Object.assign(F("bookshelf","书房侧书柜",5010,6980,1840,300,270),{"h": 800}),Object.assign(F("fridge","冰箱位(非嵌) 690x700x1900",7715,3460,690,700,90),{"h": 1900}),Object.assign(F("counter","水吧台(水盆+咖啡机)",7760,4805,1790,600,90),{"h": 900}),Object.assign(F("cabinet","水吧上柜(估)",7860,4805,1790,350,90),{"h": 900, "z": 1500}),F("desk","书桌",7735,6810,2100,650,90),F("officechair","办公椅",7030,6680,620,620,90),Object.assign(F("cabinet","地台柜",5010,8550,1300,300,270),{"h": 2250}),Object.assign(F("cabinet","地台柜",7895,8550,1300,330,90),{"h": 2250}),F("beanbag","坐垫(圆)",6950,8580,730,730,0),Object.assign(F("cabinet","壁龛高柜(470x210,X)",6425,1395,470,210,0),{"h": 2100}),Object.assign(F("cabinet","卫生间吊柜(马桶/台盆上,X)",7090,2948,1800,165,180),{"h": 700, "z": 1600}),F("shower","淋浴房",7390,985,1340,850,0),F("toilet","马桶",7584,2680,400,700,180),F("vanity","浴室柜(下置扫地机)",6657,2755,900,550,180)];}
 
 function defaultState(){
   const rooms = {}; ROOMS.forEach(r => rooms[r.id] = {name:r.name, mat:r.mat});
   return {furniture:defaultFurniture(), rooms, demolished:[], measures:[]};
 }
 
-const STORE = 'huxing-design-home-dwg-v4-heights';
+const STORE = 'huxing-design-home-dwg-v5-cabinets';
 function load(){
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.furniture)) return fixState(s); } catch(e) {}
   return null;
@@ -1458,7 +1458,7 @@ function init(){
   host.appendChild(labelRenderer.domElement);
 
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(FOV, SW()/SH(), .05, 300);
+  camera = new THREE.PerspectiveCamera(FOV, SW()/SH(), .02, 300);
   orbit = new OrbitControls(camera, renderer.domElement);
   orbit.enableDamping = true; orbit.maxPolarAngle = Math.PI*.495; orbit.minDistance = 1.5; orbit.maxDistance = 45;
   walkCtl = new PointerLockControls(camera, document.body);
@@ -2380,7 +2380,7 @@ async function enter(){
   stage.classList.remove('animating');
 }
 async function exit(){
-  if (opt.mode === 'walk'){ walkCtl.unlock(); stopTouchWalk(); $('#hint3d').textContent = HINT_ORBIT; $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
+  if (opt.mode === 'walk'){ walkCtl.unlock(); stopTouchWalk(); camera.fov = FOV; camera.updateProjectionMatrix(); $('#hint3d').textContent = HINT_ORBIT; $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
     const dir = new THREE.Vector3(); camera.getWorldDirection(dir); orbit.target.copy(camera.position).addScaledVector(dir, 3).setY(0); opt.mode = 'orbit'; syncModeBtns(); }
   fly = null; orbit.enabled = false; showLabels(false); stage.classList.add('animating');
   const A = curPose(), B = planPose();
@@ -2452,8 +2452,9 @@ function syncHint3d(){ $('#hint3d').textContent = opt.mode === 'orbit' ? HINT_OR
 let touchWalk = false;
 const joy = {x:0, y:0, id:null}, eul = new THREE.Euler(0, 0, 0, 'YXZ');
 function lookBy(dx, dy){
-  eul.setFromQuaternion(camera.quaternion);
-  eul.y += dx * .005; eul.x = THREE.MathUtils.clamp(eul.x + dy * .005, -1.35, 1.35);
+  eul.setFromQuaternion(camera.quaternion, 'YXZ'); eul.order = 'YXZ'; eul.z = 0;
+  const k = camera.fov*Math.PI/180 / SH();   // 拖过整屏高 ≈ 转过一个视场角
+  eul.y += dx * k; eul.x = THREE.MathUtils.clamp(eul.x + dy * k, -PITCH, PITCH);
   camera.quaternion.setFromEuler(eul);
 }
 function startTouchWalk(){
@@ -2478,18 +2479,24 @@ function bindJoystick(){
   const end = e => { if (e.pointerId !== joy.id) return; joy.id = null; joy.x = joy.y = 0; knob.style.transform = ''; };
   el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
 }
+let lens = 'eye'; const PITCH = .55;
+const walkFov = () => lens === 'wide' ? (camera.aspect >= 1 ? 75 : 85) : (camera.aspect >= 1 ? 60 : 65);
+function setLens(l){ lens = l; if (opt.mode === 'walk'){ camera.fov = walkFov(); camera.updateProjectionMatrix(); } }
+const eyeY = p => 1.6 + floorY(p.x*1000 + OX, p.z*1000 + OY);
 function setMode(m){
-  if (anim) return;
+  if (anim){ setTimeout(() => setMode(m), 120); return; }
   opt.mode = m; syncModeBtns();
   if (m === 'walk'){
     window.select(null);
     if (opt.cut < H){ opt.cut = H; syncCutBtns(); sync(); }
     orbit.enabled = false; fly = null;
-    camera.position.set(wx(5415), 1.6, wz(-900)); camera.lookAt(wx(5415), 1.5, wz(3000));   // 入户门外
+    camera.position.set(wx(5415), 1.6, wz(-900)); camera.lookAt(wx(5415), 1.5, wz(3000));
+    camera.position.y = eyeY(camera.position); { const e = new THREE.Euler().setFromQuaternion(camera.quaternion, 'YXZ'); e.x = 0; e.z = 0; camera.quaternion.setFromEuler(e); }
+    camera.fov = walkFov(); camera.updateProjectionMatrix(); walkCtl.minPolarAngle = Math.PI/2 - PITCH; walkCtl.maxPolarAngle = Math.PI/2 + PITCH; walkCtl.pointerSpeed = .6;   // 入户门外
     $('#walkOverlay').style.display = 'flex';
     syncHint3d();
   } else {
-    walkCtl.unlock(); stopTouchWalk(); orbit.enabled = true;
+    walkCtl.unlock(); stopTouchWalk(); orbit.enabled = true; camera.fov = FOV; camera.updateProjectionMatrix();
     $('#walkOverlay').style.display = 'none'; $('#cross').style.display = 'none';
     syncHint3d();
     orbit.target.set(0, 0, 0); flyTo(isoWhole());
@@ -2520,6 +2527,7 @@ function stepWalk(dt){
   const p = camera.position;
   if (!blocked(p.x + mv.x, p.z)) p.x += mv.x;
   if (!blocked(p.x, p.z + mv.z)) p.z += mv.z;
+  p.y += (eyeY(p) - p.y) * Math.min(1, dt*8);   // 上地台时平滑抬高150
 }
 addEventListener('keydown', e => {
   if (!active || e.target.matches('input,select,textarea')) return;
@@ -2581,7 +2589,7 @@ function shot(){ const a = document.createElement('a'); a.download = tr('户型�
 
 function relang(){ syncWalkTexts(); if (inited) buildLabels(); }
 
-window.View3D = {enter, exit, relang, sync:() => sync(), shot, groundAt, flyToRoom:id => active && !anim && flyToRoom(id), walking:() => active && opt.mode === 'walk'};
+window.View3D = {rig:() => ({camera, orbit, renderer, mode:opt.mode, busy:!!(anim||fly)}), setLens, lens:() => lens, setMode:m => setMode(m), flyToRoomNow:id => { if (active){ fly = null; flyToRoom(id); } }, enter, exit, relang, sync:() => sync(), shot, groundAt, flyToRoom:id => active && !anim && flyToRoom(id), walking:() => active && opt.mode === 'walk'};
 </script>
 </body>
 </html>
