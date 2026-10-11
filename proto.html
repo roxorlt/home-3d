@@ -456,7 +456,7 @@ function defaultState(){
   return {furniture:defaultFurniture(), rooms, demolished:[], measures:[]};
 }
 
-const STORE = 'huxing-design-home-dwg-v5-cabinets';
+const STORE = 'huxing-design-home-dwg-v6-plaincab';
 function load(){
   try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.furniture)) return fixState(s); } catch(e) {}
   return null;
@@ -1768,15 +1768,16 @@ function buildFurniture(f){
         vase(g, w*.28, h + .025, -.03, .05, .2, '#d8cfc2', R);
       } else {
         const h = .85, n = Math.max(1, Math.round(w/.5));
-        legs(g, w, d, .1, woodM('#3a3027'), .05, .016);
-        g.add(box(w, h - .13, d - .02, cm, 0, .1, -.01));
+        const plain = !!(f.h || f.z), y0 = plain ? 0 : .1;
+        if (!plain) legs(g, w, d, .1, woodM('#3a3027'), .05, .016);
+        g.add(box(w, h - .03 - y0, d - .02, cm, 0, y0, -.01));
         fronts(g, -w/2, .62, w, .2, fz, n, 1, cm, 'bar');
-        fronts(g, -w/2, .1, w, .52, fz, n, 1, cm, 'bar', .52);
+        fronts(g, -w/2, y0, w, .62 - y0, fz, n, 1, cm, 'bar', .52);
         g.add(rbox(w + .02, .03, d + .01, woodM(darker(c, .78)), 0, h - .03, 0, .008));
-        vase(g, w*.3, h, 0, .07, .24, '#e9e2d6', R);
+        if (!plain){ vase(g, w*.3, h, 0, .07, .24, '#e9e2d6', R);
         g.add(rot(box(.3, .38, .02, woodM('#3a3027'), -w*.25, h, bz + .06), -.12), rot(box(.25, .33, .005, '#d9cfbf', -w*.25, h + .03, bz + .075), -.12));   // 靠墙画框
         g.add(lathe([[0, 0], [.05, 0], [.12, .06], [.13, .07]], mat('#b8a58c', {roughness:.5, side:THREE.DoubleSide}), 0, h, .02, 32));
-        for (let k = 0; k < 3; k++) g.add(blob(.035, .035, .035, ['#d98c4a', '#c9ad4f', '#b5463a'][k], Math.cos(k*2.1)*.04, h + .045, .02 + Math.sin(k*2.1)*.04, 14));
+        for (let k = 0; k < 3; k++) g.add(blob(.035, .035, .035, ['#d98c4a', '#c9ad4f', '#b5463a'][k], Math.cos(k*2.1)*.04, h + .045, .02 + Math.sin(k*2.1)*.04, 14)); }
       }
       break;
     }
